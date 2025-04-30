@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ResuMate - Boost Your Resume</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="logo">ResuMate</div>
+      <div class="menu">
+        <a href="#about">About</a>
+        <a href="#upload">Upload</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="hero">
+      <h1>Boost Your Resume With ResuMate</h1>
+      <p>Get keyword suggestions based on your dream job description</p>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p><strong>ResuMate</strong> is an AI-powered tool designed to help job seekers optimize their resumes by comparing them with job descriptions and extracting relevant keywords.</p>
+    <h3>Our Mission</h3>
+    <p>To empower candidates to pass ATS filters and land more interviews.</p>
+    <h3>Our Vision</h3>
+    <p>Become the go-to platform for resume optimization and job search tools.</p>
+  </section>
+
+  <section id="upload">
+    <h2>Upload Your Resume</h2>
+    <form action="/analyze" method="post" enctype="multipart/form-data">
+      <label>Resume (PDF only):</label><br>
+      <input type="file" name="resume" required><br><br>
+      <label>Paste Job Description:</label><br>
+      <textarea name="jd" rows="8" cols="50" required></textarea><br><br>
+      <button type="submit">Analyze Resume</button>
+    </form>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: contact@resumate.ai</p>
+  </section>
+
+  <footer>
+    <p>© 2025 ResuMate | Resume Keyword Enhancer</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Analysis Results – ResuMate</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <section>
+    <h2>Top Keywords from Job Description</h2>
+    <ul>
+      {% for k in keywords %}
+      <li>{{ k }}</li>
+      {% endfor %}
+    </ul>
+
+    <h2>Suggested Keywords to Add to Resume</h2>
+    <ul>
+      {% for s in suggestions %}
+      <li style="color: red;">{{ s }}</li>
+      {% endfor %}
+    </ul>
+
+    <a href="/">← Go Back</a>
+  </section>
+</body>
+</html>
