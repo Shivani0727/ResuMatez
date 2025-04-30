@@ -1,35 +1,39 @@
-from flask import Flask, render_template, request
-import PyPDF2
-from sklearn.feature_extraction.text import TfidfVectorizer
+from flask import Flask, request, render_template, redirect, url_for
+import os
 
 app = Flask(__name__)
+app.config['UPLOAD_FOLDER'] = 'uploads'
 
-def extract_text_from_pdf(file):
-    reader = PyPDF2.PdfReader(file)
-    return " ".join([page.extract_text() for page in reader.pages if page.extract_text()])
-
-def extract_keywords(resume, jd):
-    corpus = [resume, jd]
-    vectorizer = TfidfVectorizer(stop_words='english')
-    tfidf = vectorizer.fit_transform(corpus)
-    features = vectorizer.get_feature_names_out()
-    scores = tfidf.toarray()
-    
-    jd_top = [features[i] for i in scores[1].argsort()[-15:][::-1]]
-    missing = [kw for kw in jd_top if kw not in resume.lower()]
-    
-    return jd_top, missing
+# Ensure upload folder exists
+os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 
 @app.route('/')
 def index():
     return render_template('index.html')
 
-@app.route('/analyze', methods=['POST'])
-def analyze():
-    resume = extract_text_from_pdf(request.files['resume'])
-    jd = request.form['jd']
-    keywords, suggestions = extract_keywords(resume, jd)
-    return render_template('result.html', keywords=keywords, suggestions=suggestions)
+@app.route('/upload', methods=['POST'])
+def upload():
+    if 'resume' not in request.files or 'jd' not in request.form:
+        return "Missing file or JD", 400
 
-if __name__ == "__main__":
+    resume = request.files['resume']
+    jd = request.form['jd']
+
+    if resume.filename == '':
+        return "No selected file", 400
+
+    # Save file (optional)
+    resume_path = os.path.join(app.config['UPLOAD_FOLDER'], resume.filename)
+    resume.save(resume_path)
+
+    # Simulated keyword extraction
+    keywords = ["Python", "Data Analysis", "Leadership", "Communication", "Time Management", "Teamwork"]
+
+    return render_template('result.html', keywords=keywords)
+
+@app.route('/result')
+def result():
+    return render_template('result.html', keywords=[])
+
+if __name__ == '__main__':
     app.run(debug=True)

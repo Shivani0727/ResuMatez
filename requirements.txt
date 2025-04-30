@@ -1,3 +1,2 @@
-Flask
-PyPDF2
-scikit-learn
+Flask==2.3.3
+pip install -r requirements.txt
