@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ResuMatez - Resume Keyword Extractor</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+</head>
+<body>
+  <header>
+    <h1>ResuMatez</h1>
+    <p>Your Smart Resume & JD Keyword Extractor</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#upload">Upload</a>
+      <a href="#login">Login</a>
+      <a href="#signup">Signup</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="about" class="about-section">
+    <h2>About Us</h2>
+    <p><strong>Vision:</strong> To revolutionize how people apply for jobs by making resumes smarter and more job-relevant.</p>
+    <p><strong>Mission:</strong> To help job seekers extract and optimize relevant keywords from resumes and job descriptions using AI-powered tools.</p>
+  </section>
+
+  <section id="upload" class="upload-section">
+    <h2>Upload Your Resume and Job Description</h2>
+    <form>
+      <label>Upload Resume (PDF/DOCX):</label><br>
+      <input type="file" accept=".pdf,.doc,.docx" /><br><br>
+      <label>Upload Job Description (PDF/DOCX):</label><br>
+      <input type="file" accept=".pdf,.doc,.docx" /><br><br>
+      <button type="submit">Extract Keywords</button>
+    </form>
+  </section>
+
+  <section id="login" class="auth-section">
+    <h2>Login</h2>
+    <input type="email" placeholder="Email" required />
+    <input type="password" placeholder="Password" required />
+    <button>Login</button>
+  </section>
+
+  <section id="signup" class="auth-section">
+    <h2>Signup</h2>
+    <input type="text" placeholder="Full Name" required />
+    <input type="email" placeholder="Email" required />
+    <input type="password" placeholder="Create Password" required />
+    <button>Signup</button>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <h2>Contact Us</h2>
+    <p>Have questions or suggestions? Reach out to us!</p>
+    <input type="text" placeholder="Your Name" required />
+    <input type="email" placeholder="Your Email" required />
+    <input type="text" placeholder="Message" required />
+    <button>Send</button>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 ResuMatez | Made with ❤️ by Prompt Engineering Team</p>
+  </footer>
+</body>
+</html>
