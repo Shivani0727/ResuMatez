@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Upload Resume & JD - ResuMatez</title>
+  <link rel="stylesheet" href="static/style.css" />
+</head>
+<body>
+  <header>
+    <h1>ResuMatez</h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/upload">Upload</a>
+      <a href="/contact">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <h2>Upload Your Resume and Job Description</h2>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+      <label>Upload Resume (PDF or DOCX):
+        <input type="file" name="resume" accept=".pdf,.docx" required>
+      </label><br><br>
+      <label>Upload Job Description:
+        <input type="file" name="job_desc" accept=".pdf,.docx" required>
+      </label><br><br>
+      <button type="submit" class="btn">Submit</button>
+    </form>
+  </main>
+  <footer>
+    <p>© 2025 ResuMatez. All rights reserved.</p>
+  </footer>
+</body>
+</html>
