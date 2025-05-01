@@ -1,47 +1,66 @@
 body {
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-  }
-  
-  header {
-    background-color: #4a90e2;
-    color: white;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  nav a {
-    color: white;
-    margin: 0 1rem;
-    text-decoration: none;
-  }
-  
-  nav a:hover {
-    text-decoration: underline;
-  }
-  
-  main {
-    padding: 2rem;
-    text-align: center;
-  }
-  
-  .btn {
-    padding: 0.7rem 1.5rem;
-    background-color: #4a90e2;
-    color: white;
-    border-radius: 5px;
-    text-decoration: none;
-  }
-  
-  footer {
-    background-color: #ddd;
-    text-align: center;
-    padding: 1rem;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-  }
-  
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background: #f7f7f7;
+}
+
+.hero {
+  background: url('assets/banner.jpg') no-repeat center center/cover;
+  height: 100vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.overlay {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+.btn {
+  background-color: #0077ff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #005ddd;
+}
+
+section {
+  padding: 4rem 2rem;
+  background: white;
+  margin: 2rem auto;
+  border-radius: 10px;
+  max-width: 1100px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.features-grid {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.feature-card img {
+  width: 60px;
+  height: auto;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #2b2b2b;
+  color: white;
+}
